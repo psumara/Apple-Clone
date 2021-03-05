@@ -1,3 +1,16 @@
+// Cube
+let y = 0
+const cube = document.querySelector('.cube')
+
+const playPause = () => {
+    setInterval(() => {
+        cube.style.transform=`rotateY(${y++}deg)`
+    }, 100);
+}
+
+playPause()
+// End of Cube
+
 // Slideshow
 const slideshowDivs = () => {
     for(let i = 1; i <= 5; i++){
@@ -38,3 +51,21 @@ const slideshow = () => {
 
 slideshow()
 // End of Slideshow
+
+// iPhones slideshow
+const iphones = document.querySelectorAll('.iphones img')
+let i = 1
+
+setInterval(() => {
+	i++
+	const iphone = document.querySelector('.iphones img.change')
+	iphone.classList.remove('change')
+
+	if (i > iphones.length) {
+		iphones[0].classList.add('change')
+		i = 1
+	} else {
+		iphone.nextElementSibling.classList.add('change')
+	}
+}, 2000)
+// End of iPhones slideshow
